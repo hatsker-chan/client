@@ -1,0 +1,88 @@
+body {
+    overflow: hidden; /* Prevent scrolling on the body */
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+h1 {
+    margin: 20px; /* Add margin to the heading */
+}
+
+.message-list {
+    flex: 1; /* Take up remaining space between h1 and messageContainer */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px; /* Add padding for aesthetics */
+    margin: 0 20px; /* Add margin for spacing */
+    border: 1px solid #ccc; /* Optional: border for the message list */
+    border-radius: 4px; /* Optional: rounded corners */
+}
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+li {
+    padding: 8px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+}
+
+/* Styles for individual message items */
+li.message {
+    padding: 10px 15px; /* Add padding for better spacing */
+    margin: 5px 0; /* Add margin between messages */
+    border-radius: 15px; /* Rounded corners */
+    max-width: 70%; /* Limit the width of messages */
+    position: relative; /* For positioning pseudo-elements */
+}
+
+/* Styles for sent messages */
+li.message.sent {
+    background-color: #dcf8c6; /* Light green background for sent messages */
+    align-self: flex-end; /* Align sent messages to the right */
+    margin-left: auto; /* Push sent messages to the right */
+}
+
+/* Styles for received messages */
+li.message.received {
+    background-color: #ffffff; /* White background for received messages */
+    align-self: flex-start; /* Align received messages to the left */
+    margin-right: auto; /* Push received messages to the left */
+}
+
+#messageContainer {
+    display: flex;
+    align-items: center;
+    padding: 30px; /* Add some padding */
+    background-color: white; /* Optional: background color */
+    border-top: 1px solid #ccc; /* Optional: border for separation */
+}
+
+#messageInput {
+    width: 100%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#sendButton {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#sendButton:hover {
+    background-color: #218838;
+}
