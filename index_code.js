@@ -43,7 +43,7 @@ function getMessages() {
   }).then(json => {
     console.log(JSON.stringify(json));
     json.messages.forEach(item => {
-      console.log(item)
+      // console.log(item)
       messages.push(
         new Message(
           item.user.nickname,
@@ -93,7 +93,6 @@ function sendMessage() {
   .then((response) => {
     if (response.ok){
       messageInputField.value = ""
-      getMessages()
     }
     console.log(response)
   })
@@ -113,4 +112,5 @@ messageInputField.addEventListener('keydown', (event) => {
 getMessages()
 
 document.getElementById('sendButton').addEventListener('click', sendMessage)
+
 
