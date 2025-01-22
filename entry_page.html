@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Selection</title>
+</head>
+<body>
+    <h1>Select a User</h1>
+    
+        <label for="user-select">Choose a user:</label>
+        <select id="user-select" name="users">
+            <option value="alex">User  1</option>
+            <option value="mike">User  2</option>
+        </select>
+
+        <button id="submit-user">Select</button>
+    <script>
+        function setupListener() {
+            localStorage.clear()
+            var userSelect = document.getElementById("user-select");
+            var submitUser = document.getElementById("submit-user");
+
+            submitUser.addEventListener("click", function() {
+                var selectedUser  = userSelect.value;
+                loadPage(selectedUser)
+            });
+        }
+        function loadPage(nickname){
+            localStorage.setItem("sender_name", nickname)
+            console.log("User in local storage: " + localStorage.getItem("sender_name"))
+
+            window.location.href = "index.html"
+        }
+        document.addEventListener("DOMContentLoaded", setupListener);
+    </script>
+</body>
+</html>

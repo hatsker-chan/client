@@ -1,5 +1,9 @@
 // Initial messages
-const sender_name = "alex"
+const sender_name = localStorage.getItem("sender_name")
+const sender_id = () => {
+  if(sender_name == "alex") return 1 
+  else return 2
+}
 const class_message_sent = "message sent"
 const class_message_received = "message received"
 
@@ -83,7 +87,7 @@ function sendMessage() {
     },
     body: JSON.stringify({
       user: {
-        id: 1,
+        id: sender_id(),
         nickname: sender_name
       },
       text: message_text,
